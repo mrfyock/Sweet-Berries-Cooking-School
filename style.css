@@ -1,0 +1,345 @@
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --background: #F5F3EF;
+    --card: #FFFFFF;
+    --accent: #FEBD2F;
+    --text-primary: #000000;
+    --text-secondary: #646464;
+    --outline: #dcdcdc; 
+}
+html, body{
+    margin: 0;
+    padding: 0;
+    background-color:  var(--background)
+}
+
+@font-face{ 
+    font-family: Roboto,
+    src: url(https://fonts.google.com/specimen/Roboto);
+ }
+ h1{
+    font-family: Roboto;
+ }
+
+.grid-container{
+    display: grid;
+    gap: 25px;
+    /* justify-content: center; */
+    grid-template: repeat(5, auto) / repeat(2, auto);
+    grid-template-areas: 
+        "navbar  navbar"
+        "intro  picture "
+        "intro  picture"
+        "cards cards"
+        "footer footer";
+}
+
+
+
+
+.navbar{
+    /* background-color: bisque; */
+    grid-area: navbar;
+    display: flex;
+    /* background-color: pink; */
+    /* grid-template-columns: repeat(3, ); */
+    /* grid-template-rows:; */
+    /* grid-template-areas: "nav-links title login"; */
+    justify-content: space-between;
+    /* margin-left: 118px; */
+    /* margin-right: 140px; */
+    margin-top: 30px;
+    justify-self: center;
+    align-items: center;
+    width: 1020px;
+   
+}
+
+
+.nav-links{
+    /* display: flex; */
+    /* justify-content: flex-start; */
+}
+.title{
+    grid-area: title;
+    /* background-color: red; */
+ 
+}
+.login{
+    grid-area: login;
+    /* display: flex; */
+    /* justify-content: flex-end; */
+    
+}
+.introduction{
+    grid-area: intro;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    /* background-color: pink; */
+    text-align: left;
+    justify-self: flex-end;
+    
+}
+.head-image{
+    display: flex;
+    grid-area: picture;
+    /* background-color: aquamarine; */
+    /* justify-self: center; */
+ }
+ #cooking{
+   width: 500px;
+ }
+.footer{
+       grid-area: footer;
+       display:  flex;
+       justify-content:  center;
+       background-color:  var(--accent);
+       padding: 20px;
+       /* width:  */
+}
+.card-container{
+    grid-area: cards;
+    display: grid;
+    gap: 50px ;
+    margin:  40px;
+    justify-content: center;
+    grid-template: repeat(2, 275px) / repeat(3, 300px);
+    
+    grid-template-areas:
+      
+        "card-1 card-2 card-3"
+     
+        "card-4 card-5 card-6";
+}
+.card-1{
+    grid-area: card-1;
+    background-color:  var(--accent);
+
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 25px;
+    border-radius: 30px;
+    padding-bottom: 40px;
+}
+.card-2{
+    
+    grid-area: card-2;
+   
+}
+.card-3{
+    grid-area: card-3;
+}
+.card-4{
+    grid-area: card-4;
+}
+.card-5{
+    grid-area: card-5;
+}
+.card-6{
+    grid-area: card-6;
+}
+.card-2, .card-3, .card-4, .card-5, .card-6 {
+    display: flex;
+    flex-direction: column;
+    background-color:  var(--card);
+    border-radius:  30px;
+    position: relative;
+    
+}
+.image{
+    position: absolute;
+    left:  195px;
+    top: -40px;
+}
+.card-title{
+    font-weight: bold;
+     
+}
+.card-content{
+    padding: 0  15px 30px 15px;
+    margin-left: 25px; 
+    margin-top: 25px;
+    
+}
+#login{
+    color: var(--card);
+    background-color: var(--text-primary);
+    width: max-content;
+    padding: 12px;
+    
+    border-radius: 50px;
+    text-decoration: none;
+}
+a{
+    color: #000000;
+    text-decoration: none;
+    border: 1px solid lightgrey;
+    padding: 8px;
+    border-radius: 45px;
+    
+}
+.link{
+    position: absolute;
+    bottom: 40px;
+  }
+
+  /* tablet */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .grid-container{
+        justify-content: center;
+        /* background-color: red; */
+        display: grid;
+        grid-template: repeat(5, auto ) / repeat(1, auto);
+        grid-template-areas:
+            "navbar "
+            "intro "
+            "picture "
+            "cards "
+            
+            "footer"
+    }
+    .card-container{
+        /* display: flex; */
+        /* justify-content: center; */
+        /* align-self: center; */
+        /* justify-self: center; */
+
+        grid-template: repeat(3, 250px) / repeat(2, 300px);
+        grid-template-areas: 
+        " card-1 card-2"
+        "card-3 card-4"
+        "card-5 card-6";
+    }
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+    }
+    .introduction{
+       display: flex;
+       background-color: pink;
+       text-align: center;
+       justify-self: center;
+       width: 75%;
+ 
+    }
+    .head-image{
+        display: flex;
+        justify-self: center;
+        /* width: 600px; */
+        /* height: fit-content; */
+    }
+    #cooking{
+        height: 500px;
+        width: 650px;
+    }
+    .footer{
+        /* width:100% ; */
+    }
+    
+  }
+  /* phone */
+  @media (min-width: 320px) and (max-width: 480px) {
+    .grid-container{
+        display: grid;
+        grid-template-columns: 480px;
+        width: 480px;
+        grid-template-areas:
+            "navbar "
+            "intro"
+            "picture"
+            "cards"
+            "footer"
+    }
+    .introduction{
+        text-align: center;
+        display: flex;
+        flex-shrink: 1;
+        /* justify-items: center; */
+        /* justify-content: center; */
+        /* align-self: center; */
+    }
+    .head-image{
+        justify-self: center;
+    }
+    #cooking{
+        width: 400px;
+
+    }
+    .navbar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        position: relative;
+        width: 100%;
+        /* display: flex; */
+        /* justify-content: ; */
+        /* justify-content: center; */
+  }
+  
+          
+    .nav-links, #login{
+        display: none;
+    }
+    .card-container{
+        display: grid;
+        /* align-items: center; */
+        /* justify-self: center; */
+        /* justify-content: center; */
+        grid-template-columns: 300px;
+        grid-template-rows: repeat(6, 250px);
+        /* grid-template-rows: repeat(6, 300px) */
+        grid-template-areas: 
+        "card-1"
+        "card-2"
+        "card-3"
+        "card-4"
+        "card-5"
+        "card-6";
+    }
+    
+    
+ 
+
+    /*src = https://www.w3schools.com/howto/howto_css_menu_icon.asp  */
+.bar-container {
+    position: absolute;
+    right: 20px;
+    top: 0px;
+    
+    display: inline-block;
+    cursor: pointer;
+    
+  }
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  /* Rotate first bar */
+  .change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+  }
+  
+  /* Fade out the second bar */
+  .change .bar2 {opacity: 0;}
+  
+  /* Rotate last bar */
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+  }
+    
+    
+
+
+  
