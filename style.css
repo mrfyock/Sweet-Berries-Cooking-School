@@ -18,7 +18,7 @@ html, body{
 
 @font-face{ 
     font-family: Roboto,
-    src: url(https://fonts.google.com/specimen/Roboto);
+    src url(https://fonts.google.com/specimen/Roboto);
  }
  h1{
     font-family: Roboto;
@@ -59,10 +59,7 @@ html, body{
 }
 
 
-.nav-links{
-    /* display: flex; */
-    /* justify-content: flex-start; */
-}
+
 .title{
     grid-area: title;
     /* background-color: red; */
@@ -238,9 +235,7 @@ a{
         height: 500px;
         width: 650px;
     }
-    .footer{
-        /* width:100% ; */
-    }
+  
     
   }
   /* phone */
@@ -339,7 +334,3 @@ a{
     transform: translate(0, -11px) rotate(45deg);
   }
     
-    
-
-
-  
