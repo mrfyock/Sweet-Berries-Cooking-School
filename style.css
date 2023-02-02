@@ -16,18 +16,30 @@ html, body{
     background-color:  var(--background)
 }
 
-@font-face{ 
-    font-family: Roboto,
-    src url(https://fonts.google.com/specimen/Roboto);
- }
+
  h1{
-    font-family: Roboto;
+    font-family: 'Roboto Serif', sans-serif;
+    font-size: 64px;
+    font-weight: 500px;
+
  }
+ h2{font-family: 'Roboto Serif', sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+}
+.introduction :nth-child(2){
+    font-family: 'Roboto Serif', sans-serif;
+    font-size: 24px;
+    color: var(--text-secondary);
+}
+p{font-family: Roboto;
+   font-size: 18px; 
+
+}
 
 .grid-container{
     display: grid;
     gap: 25px;
-    /* justify-content: center; */
     grid-template: repeat(5, auto) / repeat(2, auto);
     grid-template-areas: 
         "navbar  navbar"
@@ -37,57 +49,36 @@ html, body{
         "footer footer";
 }
 
-
-
-
 .navbar{
-    /* background-color: bisque; */
     grid-area: navbar;
     display: flex;
-    /* background-color: pink; */
-    /* grid-template-columns: repeat(3, ); */
-    /* grid-template-rows:; */
-    /* grid-template-areas: "nav-links title login"; */
     justify-content: space-between;
-    /* margin-left: 118px; */
-    /* margin-right: 140px; */
     margin-top: 30px;
     justify-self: center;
     align-items: center;
-    width: 1020px;
-   
+    width: 1020px; 
 }
-
-
 
 .title{
     grid-area: title;
-    /* background-color: red; */
- 
+
 }
 .login{
     grid-area: login;
-    /* display: flex; */
-    /* justify-content: flex-end; */
-    
 }
 .introduction{
     grid-area: intro;
     width: 500px;
     display: flex;
     flex-direction: column;
-    /* background-color: pink; */
     text-align: left;
     justify-self: flex-end;
-    
 }
 .head-image{
-    display: flex;
     grid-area: picture;
-    /* background-color: aquamarine; */
-    /* justify-self: center; */
- }
+}
  #cooking{
+   margin-top: 30px;
    width: 500px;
  }
 .footer{
@@ -96,20 +87,16 @@ html, body{
        justify-content:  center;
        background-color:  var(--accent);
        padding: 20px;
-       /* width:  */
 }
 .card-container{
     grid-area: cards;
     display: grid;
-    gap: 50px ;
-    margin:  40px;
+    gap: 60px;
+    margin:  40px 0 40px 0;
     justify-content: center;
     grid-template: repeat(2, 275px) / repeat(3, 300px);
-    
     grid-template-areas:
-      
         "card-1 card-2 card-3"
-     
         "card-4 card-5 card-6";
 }
 .card-1{
@@ -168,7 +155,7 @@ html, body{
     background-color: var(--text-primary);
     width: max-content;
     padding: 12px;
-    
+    font-weight: 400;
     border-radius: 50px;
     text-decoration: none;
 }
@@ -178,18 +165,21 @@ a{
     border: 1px solid lightgrey;
     padding: 8px;
     border-radius: 45px;
-    
+    border: none;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: bold;
 }
 .link{
     position: absolute;
-    bottom: 40px;
+    bottom: 30px;
+    left: 32px;
   }
 
   /* tablet */
   @media (min-width: 768px) and (max-width: 1024px) {
     .grid-container{
         justify-content: center;
-        /* background-color: red; */
         display: grid;
         grid-template: repeat(5, auto ) / repeat(1, auto);
         grid-template-areas:
@@ -197,48 +187,54 @@ a{
             "intro "
             "picture "
             "cards "
-            
             "footer"
     }
     .card-container{
-        /* display: flex; */
-        /* justify-content: center; */
-        /* align-self: center; */
-        /* justify-self: center; */
-
-        grid-template: repeat(3, 250px) / repeat(2, 300px);
+        grid-template: repeat(3, 260px) / repeat(2, 300px);
         grid-template-areas: 
-        " card-1 card-2"
+        "card-1 card-2"
         "card-3 card-4"
         "card-5 card-6";
     }
+
     .navbar{
         display: flex;
         justify-content: space-between;
         width: 90%;
     }
+
+    h1{
+        font-family: 'Roboto Serif', sans-serif;
+        font-size: 48px;
+     }
+
+    h2{
+        font-family: 'Roboto Serif', sans-serif;
+        font-size: 20px;
+    }
     .introduction{
        display: flex;
-       background-color: pink;
        text-align: center;
        justify-self: center;
-       width: 75%;
+       width: 60%;
  
     }
     .head-image{
         display: flex;
         justify-self: center;
-        /* width: 600px; */
-        /* height: fit-content; */
     }
     #cooking{
-        height: 500px;
+        height: 360px;
         width: 650px;
     }
-  
+
+    h2{
+        font-size: 32px;
+    }
     
   }
   /* phone */
+
   @media (min-width: 320px) and (max-width: 480px) {
     .grid-container{
         display: grid;
@@ -251,45 +247,50 @@ a{
             "cards"
             "footer"
     }
+
+    h1{
+        font-size: 36px;
+        text-align: center;
+    }
+    h2{
+        font-size: 18px;
+        text-align: center;
+    }
     .introduction{
+        width: 342px;
+        justify-self: center;
         text-align: center;
         display: flex;
-        flex-shrink: 1;
-        /* justify-items: center; */
-        /* justify-content: center; */
-        /* align-self: center; */
     }
+
     .head-image{
         justify-self: center;
     }
+
     #cooking{
         width: 400px;
-
     }
+
     .navbar{
         display: flex;
         justify-content: center;
         align-items: center;
-        
         position: relative;
         width: 100%;
-        /* display: flex; */
-        /* justify-content: ; */
-        /* justify-content: center; */
-  }
-  
+    }
+
+    h2{
+        font-size: 24px;
+    }
           
     .nav-links, #login{
         display: none;
     }
+
     .card-container{
         display: grid;
-        /* align-items: center; */
-        /* justify-self: center; */
-        /* justify-content: center; */
         grid-template-columns: 300px;
-        grid-template-rows: repeat(6, 250px);
-        /* grid-template-rows: repeat(6, 300px) */
+        grid-template-rows: 132px 270px 270px 270px 270px 270px;
         grid-template-areas: 
         "card-1"
         "card-2"
@@ -299,7 +300,12 @@ a{
         "card-6";
     }
     
-    
+    .card-1, h2{
+        text-align: left;
+        align-items: center;
+        margin-bottom: 10px;
+        font-weight: 400;
+    }
  
 
     /*src = https://www.w3schools.com/howto/howto_css_menu_icon.asp  */
@@ -307,7 +313,6 @@ a{
     position: absolute;
     right: 20px;
     top: 0px;
-    
     display: inline-block;
     cursor: pointer;
     
@@ -333,4 +338,6 @@ a{
   .change .bar3 {
     transform: translate(0, -11px) rotate(45deg);
   }
-    
+}
+
+  
