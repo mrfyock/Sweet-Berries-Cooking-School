@@ -1,7 +1,9 @@
+/* Didn’t pass the CSS validator test. */
 *{
     box-sizing: border-box;
 }
 
+/* Great work on using CSS variables!! */
 :root{
     --background: #F5F3EF;
     --card: #FFFFFF;
@@ -16,7 +18,7 @@ html, body{
     background-color:  var(--background)
 }
 
-
+/* Great work on using the correct fonts and implementing them */
  h1{
     font-family: 'Roboto Serif', sans-serif;
     font-size: 64px;
@@ -66,6 +68,10 @@ p{font-family: Roboto;
 .login{
     grid-area: login;
 }
+/* Try to always stay away from pixels especially when it comes to width.
+Try to always use more responsive units such as %.
+Your page kinda breaks when its getting smaller and right before the tablet size. This is due to using px instead of %.
+The end-goal is to have your website to be responsive on all screensizes. */
 .introduction{
     grid-area: intro;
     width: 500px;
@@ -88,6 +94,12 @@ p{font-family: Roboto;
        background-color:  var(--accent);
        padding: 20px;
 }
+/* It is not ideal to use grid-template-areas for the card container.
+In a real world scenario, we will get the data for the cards from a backend or an API.
+This means that we won't know how many cards we will have.
+So, we should code it in a way that will add cards in a row of 3s and make more rows if needed.
+So, by just defining the grid template columns, the cards will fall into their cells and make new rows
+*/
 .card-container{
     grid-area: cards;
     display: grid;
@@ -177,6 +189,8 @@ a{
   }
 
   /* tablet */
+  /* No need to add the (min-width:768px) in this media query because when we go less than 768px it will go back to the desktop setup until it enter the mobile media query, which is not what we want.
+  So, just having the max width and removing the min-width in this media query and the mobile media query will solve the problem*/
   @media (min-width: 768px) and (max-width: 1024px) {
     .grid-container{
         justify-content: center;
@@ -234,7 +248,7 @@ a{
     
   }
   /* phone */
-
+/* It’s not bad but it’s still needs some improvements. It’s not fully responsive. */
   @media (min-width: 320px) and (max-width: 480px) {
     .grid-container{
         display: grid;
